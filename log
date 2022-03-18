@@ -65,3 +65,8 @@ list.c:77:9: error: variable ‘nodo_’ set but not used [-Werror=unused-but-se
 cc1: all warnings being treated as errors
 Compilation failed
 e58e975
+Fri Mar 18 15:05:53 UTC 2022: 
+ list.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+ tests:  0|0
+4ee60b6
