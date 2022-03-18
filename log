@@ -40,3 +40,17 @@ Fri Mar 18 14:46:47 UTC 2022:
  tests:  9|3
 total_score: 35/70
 879e7cd
+Fri Mar 18 15:00:32 UTC 2022: 
+ list.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:5:0:
+list.c: In function ‘pushFront’:
+list.c:77:27: error: expected expression before ‘void’
+   Node* nodo_= createNode(void* data);
+                           ^~~~
+list.c:77:9: error: variable ‘nodo_’ set but not used [-Werror=unused-but-set-variable]
+   Node* nodo_= createNode(void* data);
+         ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+29f1ff1
