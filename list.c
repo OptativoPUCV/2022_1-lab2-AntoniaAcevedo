@@ -83,8 +83,8 @@ void pushFront(List * list, void * data) {
   }
   else
   {
-    nodo = list -> head;
-    nodo = list -> tail;
+    list -> head = nodo;
+    list -> tail = nodo;
   }
 }
 
