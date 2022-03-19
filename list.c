@@ -129,26 +129,27 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) { 
   void* copia = list -> current -> data;
+  Node* nodo = list -> current;
   if (list -> current != list -> head)
   {
     list -> current -> prev -> next = list -> current -> next;
     list -> current -> next -> prev = list -> current -> prev;
-    free (list -> current);
     list -> current = list -> current -> next;
+    free (nodo);
   }
   else if (list->current == list->tail)
   {
     list -> current -> prev -> next = NULL;
     list -> tail = list -> current -> prev;
-    free (list -> current);
     list -> current = list -> tail;
+    free (nodo);
   }
   else
   {
     list -> current -> next -> prev = NULL;
     list -> head = list -> current -> next;
-    free (list -> current);
     list -> current = list -> current;
+    free (nodo);
   }
   return copia;
 }
