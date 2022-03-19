@@ -127,9 +127,8 @@ void * popBack(List * list) {
     return popCurrent(list);
 }
 
-void * popCurrent(List * list) {
-  void* copia = list -> current -> data;
-  
+void * popCurrent(List * list) { 
+
   if (list -> current != list -> head)
   {
     Node* nodo = createNode(list -> current -> data);
@@ -140,19 +139,19 @@ void * popCurrent(List * list) {
   }
   else if (list->current == list->tail)
   {
-    list -> tail = list -> current -> prev;
     list -> current -> prev -> next = NULL;
+    list -> tail = list -> current -> prev;
+    list -> current = list -> tail;
     free (list -> current);
   }
   else
   {
     list -> current -> next -> prev = NULL;
-    list -> head = list -> current;
+    list -> head = list -> current -> next;
     list -> current = list -> current;
     free (list -> current);
-    
   }
-  return copia;
+
 }
 
 void cleanList(List * list) {
