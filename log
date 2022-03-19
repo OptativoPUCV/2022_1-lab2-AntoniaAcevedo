@@ -152,3 +152,13 @@ Sat Mar 19 16:33:15 UTC 2022:
  tests:  10|2
 total_score: 45/70
 350728b
+Sat Mar 19 16:35:58 UTC 2022: 
+ list.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:5:0:
+list.c: In function ‘pushCurrent’:
+list.c:108:5: error: expected ‘;’ before ‘nodo’
+     nodo -> prev  = list -> current;
+     ^~~~
+Compilation failed
+ee6eb1f
