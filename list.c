@@ -135,22 +135,20 @@ void * popCurrent(List * list) {
     list -> current -> prev -> next = list -> current -> next;
     list -> current -> next -> prev = list -> current -> prev;
     list -> current = list -> current -> next;
-    free (nodo);
   }
-  else if (list->current == list->tail)
+  else if (list -> current == list -> tail)
   {
     list -> current -> prev -> next = NULL;
     list -> tail = list -> current -> prev;
     list -> current = list -> tail;
-    free (nodo);
   }
   else
   {
     list -> current -> next -> prev = NULL;
     list -> head = list -> current -> next;
     list -> current = list -> current;
-    free (nodo);
   }
+  free (nodo);
   return copia;
 }
 
