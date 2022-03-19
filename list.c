@@ -128,7 +128,31 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-    return NULL;
+  void* copia = list -> current -> data;
+  
+  if (list -> current != list -> head)
+  {
+    Node* nodo = createNode(list -> current -> data);
+    nodo = list -> current -> next;
+    nodo -> prev = list -> current -> prev;
+    list -> current -> prev -> next = nodo;
+    free (list -> current);
+  }
+  else if (list->current == list->tail)
+  {
+    list -> tail = list -> current -> prev;
+    list -> current -> prev -> next = NULL;
+    free (list -> current);
+  }
+  else
+  {
+    list -> current -> next -> prev = NULL;
+    list -> head = list -> current;
+    list -> current = list -> current;
+    free (list -> current);
+    
+  }
+  return copia;
 }
 
 void cleanList(List * list) {
