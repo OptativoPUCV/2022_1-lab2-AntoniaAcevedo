@@ -133,22 +133,22 @@ void * popCurrent(List * list) {
   {
     list -> current -> prev -> next = list -> current -> next;
     list -> current -> next -> prev = list -> current -> prev;
-    list -> current = list -> current -> next;
     free (list -> current);
+    list -> current = list -> current -> next;
   }
   else if (list->current == list->tail)
   {
     list -> current -> prev -> next = NULL;
     list -> tail = list -> current -> prev;
-    list -> current = list -> tail;
     free (list -> current);
+    list -> current = list -> tail;
   }
   else
   {
     list -> current -> next -> prev = NULL;
     list -> head = list -> current -> next;
-    list -> current = list -> current;
     free (list -> current);
+    list -> current = list -> current;
   }
   return copia;
 }
