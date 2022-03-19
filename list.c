@@ -128,7 +128,7 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) { 
-
+  void* copia = list -> current -> data;
   if (list -> current != list -> head)
   {
     list -> current -> prev -> next = list -> current -> next;
@@ -150,7 +150,7 @@ void * popCurrent(List * list) {
     list -> current = list -> current;
     free (list -> current);
   }
-  return list -> current -> data;
+  return copia;
 }
 
 void cleanList(List * list) {
