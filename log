@@ -162,3 +162,9 @@ list.c:108:5: error: expected ‘;’ before ‘nodo’
      ^~~~
 Compilation failed
 ee6eb1f
+Sat Mar 19 16:37:01 UTC 2022: 
+ list.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  11|1
+total_score: 55/70
+93893d6
