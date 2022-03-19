@@ -102,9 +102,9 @@ void pushCurrent(List * list, void * data) {
   }
   else if(list -> current == list -> tail)
   {
-    nodo -> next =  list -> tail;
-    list -> tail -> prev = nodo;
     list -> tail = nodo;
+    nodo -> prev  = list -> current;
+    list -> current -> next = nodo;
   }
   else
   {
